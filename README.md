@@ -15,6 +15,10 @@ assessment submission.
 - `next/font` (Poppins for headings, Inter for body)
 - `next/image` for all imagery
 
+## AI tools Assistance
+
+- I made use of Claude, ChatGpt, and Deepseek, for some code generation, editing and optimization.
+
 ## Getting started
 
 ```bash
