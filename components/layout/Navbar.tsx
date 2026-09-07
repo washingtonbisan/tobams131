@@ -34,13 +34,19 @@ export default function Navbar() {
         <div className="flex flex-col sm:flex-row items-center justify-end gap-6 sm:gap-[24px] ">
           <Link
             href="#account"
-            className="h-[48px] w-[167px] flex items-center justify-center text-sm font-medium text-white transition-colors hover:bg-opacity-80 flex-shrink-0"
+            className="h-[48px] w-[167px] p-1 sm:p-3 md:p-4 lg:p-6 flex items-center justify-between text-sm font-medium text-white transition-colors hover:bg-opacity-80 flex-shrink-0"
             style={{
               backgroundColor: "rgb(74, 14, 53)",
               borderRadius: "6px",
             }}
           >
+            <img src="/body.png" alt="body icon" />
             Account
+            <img
+              src="/Vec.png"
+              alt="vector body
+            "
+            />
           </Link>
 
           <Link

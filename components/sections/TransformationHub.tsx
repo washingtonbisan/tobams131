@@ -17,7 +17,7 @@ export default function TransformationHub() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="relative h-64 w-full overflow-hidden rounded-2xl sm:h-80 lg:h-[420px]">
             <Image
-              src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=700&q=80"
+              src="/jite.png"
               alt="A woman standing in a digital city environment, representing the Transformation Hub webinar series"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -37,11 +37,10 @@ export default function TransformationHub() {
               curated by the CEO, Dr. Jite Newton. Designed to elevate career
               trajectories and leadership capabilities, this exclusive event
               offers invaluable insights and strategies for personal and
-              professional growth. Whether you&apos;re seeking to advance
-              your career or enhance your leadership skills, the
-              Transformation Hub provides a transformative learning
-              experience to unlock your full potential and drive success in
-              your endeavours.
+              professional growth. Whether you&apos;re seeking to advance your
+              career or enhance your leadership skills, the Transformation Hub
+              provides a transformative learning experience to unlock your full
+              potential and drive success in your endeavours.
             </p>
             <ul className="grid grid-cols-1 gap-2 text-sm text-brand-dark-2 sm:grid-cols-2">
               {TOPICS.map((topic) => (
