@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -24,38 +25,29 @@ export default function Navbar() {
           href="/"
           className="font-heading text-lg font-bold leading-none tracking-tight text-brand-dark-2"
         >
-          <img
+          <Image
             src="/logo.png"
-            alt="tobamslogo"
-            className="w-32 h-auto rounded-lg shadow-md"
+            alt="Tobams Group logo"
+            width={128}
+            height={32}
+            className="h-auto w-32 rounded-sm shadow-md"
+            priority
           />
         </Link>
 
-        <div className="flex flex-col sm:flex-row items-center justify-end gap-6 sm:gap-[24px] ">
+        <div className="flex items-center gap-4">
           <Link
             href="#account"
-            className="h-[48px] w-[167px] p-1 sm:p-3 md:p-4 lg:p-6 flex items-center justify-between text-sm font-medium text-white transition-colors hover:bg-opacity-80 flex-shrink-0"
-            style={{
-              backgroundColor: "rgb(74, 14, 53)",
-              borderRadius: "6px",
-            }}
+            className="flex h-12 items-center justify-between gap-2 bg-[#4A0E35] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#3d0c2d] rounded-sm flex-shrink-0"
           >
-            <img src="/body.png" alt="body icon" />
+            <Image src="/body.png" alt="" width={20} height={20} />
             Account
-            <img
-              src="/Vec.png"
-              alt="vector body
-            "
-            />
+            <Image src="/Vec.png" alt="" width={12} height={12} />
           </Link>
 
           <Link
             href="#assessment"
-            className="h-[48px] w-[183px] flex items-center justify-center text-sm font-medium text-white transition-colors hover:bg-opacity-80 flex-shrink-0"
-            style={{
-              backgroundColor: "rgb(239, 67, 83)",
-              borderRadius: "6px",
-            }}
+            className="flex h-12 items-center justify-center bg-[#EF4353] px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-[#d63a49] rounded-sm flex-shrink-0"
           >
             Take Assessment
           </Link>
@@ -67,7 +59,7 @@ export default function Navbar() {
           aria-expanded={isMenuOpen}
           aria-controls="primary-navigation"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="flex h-10 w-10 items-center justify-center rounded-md text-brand-dark-2 lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-sm text-brand-dark-2 lg:hidden"
         >
           <span className="sr-only">Toggle navigation</span>
           {isMenuOpen ? (
@@ -109,7 +101,7 @@ export default function Navbar() {
         aria-label="Primary"
         className="hidden border-t border-brand-border/70 lg:block"
       >
-        <ul className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-7 gap-y-2 px-4 py-2.5 font-nunito text-sm font-normal text-brand-dark-2 sm:px-6 lg:px-8">
+        <ul className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-7 gap-y-2 px-4 py-2.5 text-sm font-normal text-brand-dark-2 sm:px-6 lg:px-8">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <Link
@@ -128,13 +120,13 @@ export default function Navbar() {
           aria-label="Mobile"
           className="border-t border-brand-border/70 bg-white lg:hidden"
         >
-          <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-brand-dark-2 font-nunito">
+          <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-brand-dark-2">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block rounded-md px-2 py-2 transition-colors hover:bg-brand-lavender hover:text-brand-maroon"
+                  className="block rounded-sm px-2 py-2 transition-colors hover:bg-brand-lavender hover:text-brand-maroon"
                 >
                   {link.label}
                 </Link>
@@ -143,13 +135,13 @@ export default function Navbar() {
             <li className="mt-2 flex gap-3 px-2">
               <Link
                 href="#account"
-                className="flex-1 rounded-full border border-brand-maroon/60 px-4 py-2 text-center text-brand-maroon"
+                className="flex-1 rounded-sm border border-brand-maroon/60 px-4 py-2 text-center text-brand-maroon"
               >
                 Account
               </Link>
               <Link
                 href="#assessment"
-                className="flex-1 rounded-full bg-brand-maroon px-4 py-2 text-center text-white"
+                className="flex-1 rounded-sm bg-brand-maroon px-4 py-2 text-center text-white"
               >
                 Take Assessment
               </Link>

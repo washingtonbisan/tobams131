@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Nunito } from "next/font/google";
+import { Nunito, Poppins, Inter } from "next/font/google";
 import "./globals.css";
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-});
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  variable: "--font-nunito", // This creates the raw CSS variable
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,8 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col antialiased text-brand-dark-2">
+    <html
+      lang="en"
+      className={`${nunito.variable} ${poppins.variable} ${inter.variable} h-full`}
+    >
+      <body className="min-h-full flex flex-col antialiased font-nunito text-brand-dark-2">
         {children}
       </body>
     </html>

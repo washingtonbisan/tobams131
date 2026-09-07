@@ -21,18 +21,22 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center sm:px-6 lg:px-8">
         <Eyebrow tone="light">WHAT WE DO</Eyebrow>
 
-        <h1 className="font-nunito text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+        <h1 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
           Training and Development
         </h1>
 
-        <p className="text-sm text-white/85 sm:text-base">
+        <p className="text-base leading-relaxed text-white/85 sm:text-lg">
           Our comprehensive range of programs and resources is designed to
           enhance skills, broaden knowledge, and propel careers forward
           <br />
           in today&apos;s ever-evolving landscape.
         </p>
 
-        <Button href="#consultation" className="!rounded-sm bg-[rgb(87,18,68)]">
+        <Button
+          href="#consultation"
+          variant="primary"
+          className="bg-[#571244] hover:bg-[#460e36]"
+        >
           Book a Consultation
         </Button>
       </div>

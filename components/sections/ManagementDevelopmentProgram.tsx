@@ -10,8 +10,8 @@ const OUTCOMES = [
 export default function ManagementDevelopmentProgram() {
   return (
     <section id="management-development" className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="grid overflow-hidden rounded-[28px] bg-[rgb(87,18,68)] lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="grid overflow-hidden rounded-sm bg-[#571244] lg:grid-cols-2">
           <div className="relative h-64 w-full sm:h-80 lg:h-full lg:min-h-[480px]">
             <Image
               src="/ManageDev.png"
@@ -23,10 +23,10 @@ export default function ManagementDevelopmentProgram() {
           </div>
 
           <div className="flex flex-col justify-center gap-4 p-6 sm:p-10 lg:p-14">
-            <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
               Management Development Program
             </h2>
-            <p className="text-sm leading-relaxed text-white/80 sm:text-base">
+            <p className="text-base leading-relaxed text-white/80">
               Tobams Group offers a comprehensive Management Development Program
               designed to equip corporate organisations with the high-performing
               leaders they need to thrive. Our program includes workshops,
@@ -40,7 +40,7 @@ export default function ManagementDevelopmentProgram() {
               {OUTCOMES.map((outcome) => (
                 <li
                   key={outcome}
-                  className="flex items-center gap-3 rounded-lg bg-white/10 px-4 py-3 text-sm font-semibold text-white"
+                  className="flex items-center gap-3 rounded-sm bg-white/10 px-4 py-3 text-sm font-semibold text-white"
                 >
                   <span
                     className="h-2 w-2 shrink-0 rotate-45 bg-white"

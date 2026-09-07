@@ -34,7 +34,7 @@ export default function Testimonials() {
     const el = scrollerRef.current;
     if (!el) return;
     const card = el.querySelector("li");
-    const gap = 24; // matches gap-6
+    const gap = 24;
     const cardWidth = card ? card.clientWidth + gap : 320;
     el.scrollBy({
       left: direction === "next" ? cardWidth : -cardWidth,
@@ -44,19 +44,19 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <h2 className="text-center font-heading text-2xl font-bold text-brand-maroon sm:text-3xl">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <h2 className="text-center text-2xl font-bold text-brand-maroon sm:text-3xl">
           Testimonials
         </h2>
 
         <ul
           ref={scrollerRef}
-          className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 scrollbar-hide"
         >
           {TESTIMONIALS.map((testimonial) => (
             <li
               key={testimonial.name}
-              className="flex w-[300px] shrink-0 snap-start flex-col gap-4 rounded-2xl border border-[rgb(230,110,140)]/30 bg-white p-6 shadow-sm sm:w-[340px]"
+              className="flex w-[300px] shrink-0 snap-start flex-col gap-4 rounded-sm border border-[#E66E8C]/30 bg-white p-6 shadow-sm sm:w-[340px]"
             >
               <div className="flex items-center gap-3">
                 <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full">
@@ -75,7 +75,7 @@ export default function Testimonials() {
                   <p className="text-xs text-brand-muted">{testimonial.role}</p>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-brand-muted">
+              <p className="text-base leading-relaxed text-brand-muted">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
             </li>
@@ -87,7 +87,7 @@ export default function Testimonials() {
             type="button"
             aria-label="Previous testimonials"
             onClick={() => scrollByCard("prev")}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgb(230,110,140)] text-[rgb(230,110,140)] transition-colors hover:bg-[rgb(230,110,140)]/10"
+            className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#E66E8C] text-[#E66E8C] transition-colors hover:bg-[#E66E8C]/10"
           >
             ‹
           </button>
@@ -95,7 +95,7 @@ export default function Testimonials() {
             type="button"
             aria-label="Next testimonials"
             onClick={() => scrollByCard("next")}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgb(230,110,140)] text-[rgb(230,110,140)] transition-colors hover:bg-[rgb(230,110,140)]/10"
+            className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#E66E8C] text-[#E66E8C] transition-colors hover:bg-[#E66E8C]/10"
           >
             ›
           </button>

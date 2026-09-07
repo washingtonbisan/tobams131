@@ -1,49 +1,94 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-
-  /* Brand palette */
-  --color-brand-maroon: #6e1e46;
-  --color-brand-maroon-dark: #551636;
-  --color-brand-dark: #262626;
-  --color-brand-dark-2: #1c1c1c;
-  --color-brand-lavender: #f4eef4;
-  --color-brand-muted: #6b6b6b;
-  --color-brand-border: #e4dde6;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-brand-maroon: var(--color-brand-maroon);
-  --color-brand-maroon-dark: var(--color-brand-maroon-dark);
-  --color-brand-dark: var(--color-brand-dark);
-  --color-brand-dark-2: var(--color-brand-dark-2);
-  --color-brand-lavender: var(--color-brand-lavender);
-  --color-brand-muted: var(--color-brand-muted);
-  --color-brand-border: var(--color-brand-border);
-  --font-heading: var(--font-poppins);
-  --font-sans: var(--font-inter);
-}
-
 @theme {
-  /* This creates the utility class: 'font-nunito' */
-  --font-nunito: var(--font-nunito), sans-serif;
+  --font-nunito: var(--font-nunito), Nunito, system-ui, sans-serif;
+  --font-poppins: var(--font-poppins), Poppins, system-ui, sans-serif;
+  --font-inter: var(--font-inter), Inter, system-ui, sans-serif;
+
+  --color-brand-maroon: #571244;
+  --color-brand-maroon-dark: #460e36;
+  --color-brand-dark-2: #1a1a1a;
+  --color-brand-muted: #4a4a4a;
+  --color-brand-lavender: #f5f0f8;
+  --color-brand-border: #e5e5e5;
+
+  --radius-sm: 4px;
+
+  --font-size-base: 18px;
+  --font-size-base--line-height: 1.6;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+@layer base {
+  /* Apply Nunito as default font for body text */
+  html {
+    font-family: var(--font-nunito);
+  }
+
+  body {
+    @apply bg-white text-brand-dark-2 antialiased;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Heading font override - Poppins */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-poppins);
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-maroon;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-* {
-  scroll-behavior: smooth;
+@layer components {
+  /* Reusable button styles - square with slight curves */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-sm px-6 py-3 text-sm font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-brand-maroon text-white hover:bg-brand-maroon-dark focus-visible:outline-white;
+  }
+
+  .btn-outline {
+    @apply border border-brand-dark-2 text-brand-dark-2 hover:bg-brand-dark-2 hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply text-white/90 hover:text-white;
+  }
+
+  /* Container for consistent spacing */
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-brand-maroon);
-  outline-offset: 2px;
+@layer utilities {
+  /* Hide scrollbar utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

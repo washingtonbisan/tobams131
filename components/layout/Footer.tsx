@@ -123,7 +123,7 @@ const LEGAL_LINKS = [
 function FooterLinkGroup({ title, links }: { title: string; links: string[] }) {
   return (
     <div>
-      <h3 className="font-heading text-sm font-semibold text-white">{title}</h3>
+      <h3 className="text-sm font-semibold text-white">{title}</h3>
       <ul className="mt-4 flex flex-col gap-2.5 text-sm text-white/70">
         {links.map((link) => (
           <li key={link}>
@@ -139,12 +139,11 @@ function FooterLinkGroup({ title, links }: { title: string; links: string[] }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-dark-2 text-white">
+    <footer className="bg-[#1a1a1a] text-white">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2">
-              {/* Assumes a logo file at /public/logo.png — update the path if yours is named differently */}
               <div className="relative h-8 w-8 shrink-0">
                 <Image
                   src="/logo.png"
@@ -154,7 +153,7 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <p className="font-heading text-lg font-bold leading-none">
+              <p className="text-lg font-bold leading-none">
                 TOBAMS
                 <span className="block text-xs font-semibold tracking-[0.3em] text-white/60">
                   GROUP
@@ -173,7 +172,7 @@ export default function Footer() {
                   <Link
                     href={href}
                     aria-label={label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+                    className="flex h-9 w-9 items-center justify-center rounded-sm bg-white/10 text-white transition-colors hover:bg-white/20"
                   >
                     <Icon className="h-4 w-4" />
                   </Link>
@@ -189,10 +188,10 @@ export default function Footer() {
 
         <div className="mt-12 grid grid-cols-1 gap-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h3 className="font-heading text-sm font-semibold text-white">
+            <h3 className="text-sm font-semibold text-white">
               Registered Offices
             </h3>
-            <p className="mt-3 text-sm font-semibold text-[rgb(230,110,140)]">
+            <p className="mt-3 text-sm font-semibold text-[#E66E8C]">
               United Kingdom
             </p>
             <p className="mt-1 text-sm leading-relaxed text-white/60">
@@ -203,12 +202,8 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="font-heading text-sm font-semibold text-white/0">
-              &nbsp;
-            </h3>
-            <p className="mt-3 text-sm font-semibold text-[rgb(230,110,140)]">
-              Nigeria
-            </p>
+            <h3 className="text-sm font-semibold text-white/0">&nbsp;</h3>
+            <p className="mt-3 text-sm font-semibold text-[#E66E8C]">Nigeria</p>
             <p className="mt-1 text-sm leading-relaxed text-white/60">
               RC 1048722 (Registered by the Corporate Affairs Commission)
               <br />
@@ -216,11 +211,11 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="font-heading text-sm font-semibold text-white">
+            <h3 className="text-sm font-semibold text-white">
               Contact Information
             </h3>
             <p className="mt-3 flex items-center gap-2 text-sm text-white/70">
-              <MailIcon className="h-4 w-4 shrink-0 text-[rgb(230,110,140)]" />
+              <MailIcon className="h-4 w-4 shrink-0 text-[#E66E8C]" />
               <Link
                 href="mailto:theteam@tobamsgroup.com"
                 className="hover:text-white"
@@ -229,7 +224,7 @@ export default function Footer() {
               </Link>
             </p>
             <p className="mt-2 flex items-center gap-2 text-sm text-white/70">
-              <PhoneIcon className="h-4 w-4 shrink-0 text-[rgb(230,110,140)]" />
+              <PhoneIcon className="h-4 w-4 shrink-0 text-[#E66E8C]" />
               <Link href="tel:+447886600748" className="hover:text-white">
                 +44 7886 600748
               </Link>

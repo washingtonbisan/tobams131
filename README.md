@@ -4,7 +4,7 @@ A pixel-focused, responsive rebuild of the Tobams Group "Training and Developmen
 page, built with Next.js (App Router) and Tailwind CSS as a frontend internship
 assessment submission.
 
-**Live URL:** _add your Vercel URL here after deploying_
+**Live URL:**https://tobams131.vercel.app/
 **Figma reference:** https://www.figma.com/design/wuqCLkK1feTgB6xxSRRwZu/Frontend-Intern-Assessment?node-id=0-1
 
 ## Stack
