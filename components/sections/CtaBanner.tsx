@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 interface CtaBannerProps {
   id?: string;
@@ -16,15 +16,24 @@ export default function CtaBanner({
   ctaHref,
 }: CtaBannerProps) {
   return (
-    <section id={id} className="bg-brand-dark-2">
-      <div className="mx-auto flex max-w-4xl flex-col items-center gap-5 px-4 py-14 text-center sm:px-6 sm:py-16">
-        {eyebrow && (
-          <p className="text-sm font-medium text-white/70">{eyebrow}</p>
-        )}
-        <h2 className="font-heading text-xl font-bold text-white sm:text-2xl lg:text-3xl">
-          {heading}
-        </h2>
-        <Button href={ctaHref}>{ctaLabel}</Button>
+    <section id={id} className="bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-[28px] bg-[rgb(87,18,68)] px-6 py-10 text-center sm:px-10 sm:py-12">
+          {eyebrow && (
+            <p className="text-sm font-semibold text-white sm:text-base">
+              {eyebrow}
+            </p>
+          )}
+          <p className="mt-1 text-sm font-semibold text-white sm:text-base">
+            {heading}
+          </p>
+          <Link
+            href={ctaHref}
+            className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[rgb(87,18,68)] transition-opacity hover:opacity-90"
+          >
+            {ctaLabel}
+          </Link>
+        </div>
       </div>
     </section>
   );

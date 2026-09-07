@@ -189,11 +189,11 @@ export default function Home() {
           ctaHref="#consultation"
         />
 
-        <CtaBanner
+        {/* <CtaBanner
           heading="Don't just dream it—let's build it! Click now and start your project with Tobams Group. Your journey to digital excellence begins here."
           ctaLabel="Book a Consultation"
           ctaHref="#consultation"
-        />
+        /> */}
 
         <Testimonials />
 

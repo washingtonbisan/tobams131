@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 
 const TESTIMONIALS = [
@@ -25,6 +28,20 @@ const TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
+  const scrollerRef = useRef<HTMLUListElement>(null);
+
+  const scrollByCard = (direction: "prev" | "next") => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector("li");
+    const gap = 24; // matches gap-6
+    const cardWidth = card ? card.clientWidth + gap : 320;
+    el.scrollBy({
+      left: direction === "next" ? cardWidth : -cardWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section id="testimonials" className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
@@ -32,16 +49,16 @@ export default function Testimonials() {
           Testimonials
         </h2>
 
-        <ul className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul
+          ref={scrollerRef}
+          className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {TESTIMONIALS.map((testimonial) => (
             <li
               key={testimonial.name}
-              className="flex flex-col gap-4 rounded-2xl border border-brand-border bg-white p-6 shadow-sm"
+              className="flex w-[300px] shrink-0 snap-start flex-col gap-4 rounded-2xl border border-[rgb(230,110,140)]/30 bg-white p-6 shadow-sm sm:w-[340px]"
             >
-              <p className="text-sm leading-relaxed text-brand-muted">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <div className="mt-auto flex items-center gap-3">
+              <div className="flex items-center gap-3">
                 <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full">
                   <Image
                     src={testimonial.avatar}
@@ -55,14 +72,34 @@ export default function Testimonials() {
                   <p className="text-sm font-semibold text-brand-dark-2">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-brand-muted">
-                    {testimonial.role}
-                  </p>
+                  <p className="text-xs text-brand-muted">{testimonial.role}</p>
                 </div>
               </div>
+              <p className="text-sm leading-relaxed text-brand-muted">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
             </li>
           ))}
         </ul>
+
+        <div className="mt-6 flex justify-end gap-3">
+          <button
+            type="button"
+            aria-label="Previous testimonials"
+            onClick={() => scrollByCard("prev")}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgb(230,110,140)] text-[rgb(230,110,140)] transition-colors hover:bg-[rgb(230,110,140)]/10"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            aria-label="Next testimonials"
+            onClick={() => scrollByCard("next")}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgb(230,110,140)] text-[rgb(230,110,140)] transition-colors hover:bg-[rgb(230,110,140)]/10"
+          >
+            ›
+          </button>
+        </div>
       </div>
     </section>
   );
