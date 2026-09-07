@@ -47,7 +47,7 @@ export default function Home() {
             "Sustainability Training",
             "Customised Training",
           ]}
-          imageSrc="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80"
+          imageSrc="/CorpTrain.png"
           imageAlt="Corporate training session with a facilitator presenting to a team at a whiteboard"
           imagePosition="right"
           background="lavender"
@@ -65,7 +65,7 @@ export default function Home() {
             "Time Management and Productivity",
             "Career Development",
           ]}
-          imageSrc="https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=700&q=80"
+          imageSrc="/PersTrain.png"
           imageAlt="A focused professional woman listening intently in an individual training session"
           imagePosition="left"
         />

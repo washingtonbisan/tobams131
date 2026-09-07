@@ -19,11 +19,11 @@ export default function CapacityDevelopment() {
               Capacity Development
             </h2>
             <p className="text-sm leading-relaxed text-brand-muted sm:text-base">
-              At Tobams Group, we empower individuals and organizations
-              through tailored training programs, expert-led workshops, and
-              personalized mentorship. We are committed to your success and
-              growth. We are dedicated to providing a comprehensive suite of
-              benefits designed to foster your development and success:
+              At Tobams Group, we empower individuals and organizations through
+              tailored training programs, expert-led workshops, and personalized
+              mentorship. We are committed to your success and growth. We are
+              dedicated to providing a comprehensive suite of benefits designed
+              to foster your development and success:
             </p>
             <ul className="grid grid-cols-1 gap-2 text-sm text-brand-dark-2 sm:grid-cols-2">
               {BENEFITS.map((benefit) => (
@@ -38,20 +38,11 @@ export default function CapacityDevelopment() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div>
             <div className="relative h-48 overflow-hidden rounded-2xl sm:h-64 lg:h-[200px]">
               <Image
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=80"
+                src="/CapDev.png"
                 alt="Capacity development workshop with presenter showing charts and graphs to team members"
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-48 overflow-hidden rounded-2xl sm:h-64 lg:h-[200px]">
-              <Image
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80"
-                alt="Three colleagues collaborating with a tablet, discussing a management development program"
                 fill
                 sizes="(min-width: 1024px) 25vw, 50vw"
                 className="object-cover"
