@@ -1,3 +1,7 @@
+## Quick note
+
+I faced some problems, access to power, and enough time to work on it as i would have wanted, but I have been able to come up with this. Thank you.
+
 # Tobams Group — Training and Development (Frontend Intern Assessment)
 
 A pixel-focused, responsive rebuild of the Tobams Group "Training and Development"
