@@ -19,27 +19,37 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-7 px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="font-heading text-lg font-bold leading-none tracking-tight text-brand-dark-2"
         >
-          TOBAMS
-          <span className="block text-xs font-semibold tracking-[0.3em] text-brand-maroon">
-            GROUP
-          </span>
+          <img
+            src="/logo.png"
+            alt="tobamslogo"
+            className="w-32 h-auto rounded-lg shadow-md"
+          />
         </Link>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="flex flex-col sm:flex-row items-center justify-end gap-6 sm:gap-[24px] ">
           <Link
             href="#account"
-            className="rounded-full border border-brand-maroon/60 px-5 py-2 text-sm font-medium text-brand-maroon transition-colors hover:bg-brand-maroon hover:text-white"
+            className="h-[48px] w-[167px] flex items-center justify-center text-sm font-medium text-white transition-colors hover:bg-opacity-80 flex-shrink-0"
+            style={{
+              backgroundColor: "rgb(74, 14, 53)",
+              borderRadius: "6px",
+            }}
           >
             Account
           </Link>
+
           <Link
             href="#assessment"
-            className="rounded-full bg-brand-maroon px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-maroon-dark"
+            className="h-[48px] w-[183px] flex items-center justify-center text-sm font-medium text-white transition-colors hover:bg-opacity-80 flex-shrink-0"
+            style={{
+              backgroundColor: "rgb(239, 67, 83)",
+              borderRadius: "6px",
+            }}
           >
             Take Assessment
           </Link>
@@ -55,17 +65,38 @@ export default function Navbar() {
         >
           <span className="sr-only">Toggle navigation</span>
           {isMenuOpen ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M6 6L18 18M6 18L18 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
             </svg>
           ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 7H20M4 12H20M4 17H20"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
             </svg>
           )}
         </button>
       </div>
-
       <nav
         id="primary-navigation"
         aria-label="Primary"
@@ -84,7 +115,6 @@ export default function Navbar() {
           ))}
         </ul>
       </nav>
-
       {isMenuOpen && (
         <nav
           aria-label="Mobile"
