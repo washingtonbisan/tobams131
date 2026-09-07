@@ -97,12 +97,13 @@ export default function Navbar() {
           )}
         </button>
       </div>
+
       <nav
         id="primary-navigation"
         aria-label="Primary"
         className="hidden border-t border-brand-border/70 lg:block"
       >
-        <ul className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-7 gap-y-2 px-4 py-2.5 text-sm font-medium text-brand-dark-2 sm:px-6 lg:px-8">
+        <ul className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-7 gap-y-2 px-4 py-2.5 font-nunito text-sm font-normal text-brand-dark-2 sm:px-6 lg:px-8">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <Link
@@ -115,12 +116,13 @@ export default function Navbar() {
           ))}
         </ul>
       </nav>
+
       {isMenuOpen && (
         <nav
           aria-label="Mobile"
           className="border-t border-brand-border/70 bg-white lg:hidden"
         >
-          <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-brand-dark-2">
+          <ul className="flex flex-col gap-1 px-4 py-3 text-sm font-medium text-brand-dark-2 font-nunito">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <Link

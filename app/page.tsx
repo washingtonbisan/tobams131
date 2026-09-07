@@ -29,7 +29,7 @@ export default function Home() {
             "Career Development",
             "Business Model",
           ]}
-          imageSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+          imageSrc="/corpImage.png"
           imageAlt="Two professionals, a man in a suit and a woman in business attire, smiling"
           imagePosition="left"
           ctaLabel="Learn More"
